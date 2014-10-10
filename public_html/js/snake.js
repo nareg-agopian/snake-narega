@@ -14,7 +14,7 @@ function gameInitialize() {
     screenWidth = window.innerWidth;
     screenHeight = window.innerHeight;
     
-    canvas.widht = screenWidht;
+    canvas.width = screenWidth;
     canvas.height = screenHeight;
 }
 
@@ -23,6 +23,6 @@ function gameLoop() {
 }
 
 function gameDraw() {
-    context.fillstyle = "rgb(180, 250, 213)";
+    context.fillStyle = "rgb(180, 250, 213)";
     context.fillRect(0, 0, screenWidth, screenHeight);
 }
