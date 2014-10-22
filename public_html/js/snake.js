@@ -1,6 +1,6 @@
 var snake; 
 var snakeLength;
-var snakesize;
+var snakeSize;
 
 var context;
 var screenWidth;
@@ -36,7 +36,7 @@ function snakeInitialize() {
     snakeLength = 5;
     snakeSize = 20;
     
-    for(var index = 0; index < snakeLegth; index++) {
+    for(var index = snakeLength -1 ; index >= 0; index--) {
         snake.push( {
             x: index,
             y: 0
@@ -52,5 +52,13 @@ function snakeDraw() {
 }
 
 function snakeUpdate() {
+    var snakeHeadX = snake[0].x;
+    var snakeHeadY = snake[0].y;
     
+    snakeHeadX++;
+    
+    var snakeTail = snake.pop();
+    snakeTail.x = snakeHeadX;
+    snakeTail.y = snakeHeadY;
+    snake.unshift(snakeTail);
 }
